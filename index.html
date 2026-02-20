@@ -24,6 +24,7 @@
         body {
             background: #000000;
             overflow-x: hidden;
+            scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -93,6 +94,7 @@
             transition: opacity 0.4s ease, transform 0.4s ease;
             opacity: 0;
             transform: translateY(-12px);
+            padding: 10px 25px;
         }
 
         body.page-loaded .navigation {
@@ -645,6 +647,7 @@
             transition: opacity 0.4s ease, transform 0.4s ease;
             opacity: 0;
             transform: translateY(12px);
+            bottom: 100px;
         }
 
         body.page-loaded .story-section {
@@ -1755,6 +1758,7 @@
                 text-align: center;
                 position: relative;
                 z-index: 70;
+                bottom: 30px;
             }
 
             .story-content {
@@ -1771,6 +1775,7 @@
             .cta-container {
                 justify-content: center;
                 width: 100%;
+                display: none;
             }
 
             .cta-right-cluster {
@@ -1937,7 +1942,7 @@
                 <a href="contact.html" class="nav-item">Contact</a>
             </nav>
             <div class="nav-icons">
-                <a href="register.html" class="nav-icon">REGISTER NOW</a>
+                <a href="#events" class="nav-icon">REGISTER NOW</a>
             </div>
         </div>
     </header>
@@ -2002,7 +2007,7 @@
                     <p class="story-description">National Level Technical Symposium | 5th March 2026<br>
                         Venue: ECE Block, Jeppiaar Engineering College, Chennai</p>
                 </div>
-                <div class="cta-container">
+                <div class="cta-container" style="display: none;">
                     <div class="cta-right-cluster">
                         <div class="circle-count"><span class="count-text">26</span></div>
                         <div class="circle-image-placeholder"></div>
@@ -2040,7 +2045,7 @@
                         <div class="film-title">DECTRON 2K26</div>
                         <p style="margin-bottom: 20px; font-family: 'Inter', sans-serif !important; color: #888;">5TH
                             MARCH 2026</p>
-                        <a href="register.html" class="book-cta" style="text-decoration: none;">JOIN NOW</a>
+                        <a href="#events" class="book-cta" style="text-decoration: none;">JOIN NOW</a>
                     </div>
                 </div>
                 <div class="col right reveal-on-scroll">
@@ -2061,7 +2066,7 @@
             </div>
             <div class="cine-top-inner">
                 <div class="cine-left">
-                    <div class="cine-subtitle">PRESENTED BY</div>
+                    <div class="cine-subtitle" id="events">PRESENTED BY</div>
                     <div class="marvel-badge">ECE DEPARTMENT</div>
                 </div>
                 <div class="cine-center" style="position: relative;">
