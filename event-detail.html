@@ -173,6 +173,13 @@
             text-transform: uppercase;
         }
 
+        .event-poster-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
         .details-column {
             flex: 1;
         }
@@ -692,7 +699,8 @@
                 fee: '₹100',
                 stud: 'Niranjan D (8778428579), Pavithra D (9865108301), Patrick Rohan V (7540011423)',
                 fac: 'Dr. V. Nanammal',
-                form: 'https://forms.gle/hYxSMTrsCsHGjpG7A'
+                form: 'https://forms.gle/hYxSMTrsCsHGjpG7A',
+                poster: 'assets/posters/visionx.jpg'
             },
             'creotix': {
                 title: 'CREOTIX',
@@ -704,7 +712,8 @@
                 fee: '₹50',
                 stud: 'Lokpriyan M (9962040336), Janavi (6384074914)',
                 fac: 'Mr. B. Appoon',
-                form: 'https://forms.gle/huAchXSvhLWmwN2N8'
+                form: 'https://forms.gle/huAchXSvhLWmwN2N8',
+                poster: 'assets/posters/creotix.jpg'
             },
             'synoptix': {
                 title: 'SYNOPTIX',
@@ -716,7 +725,8 @@
                 fee: '₹50',
                 stud: 'Deepika (8668014960), Krithika S (9952017659)',
                 fac: 'Mrs. R. Gracelin Sheeba',
-                form: 'https://forms.gle/cQKYhPFiu4RG9mKp6'
+                form: 'https://forms.gle/cQKYhPFiu4RG9mKp6',
+                poster: 'assets/posters/synoptix.jpg'
             },
             'rtl': {
                 title: 'RTL',
@@ -752,7 +762,8 @@
                 fee: '₹100',
                 stud: 'Anbu susee (8300963002)',
                 fac: 'Mr. J. Ranjith Kumar',
-                form: 'https://forms.gle/WXe3ar5JX6CgqDy18'
+                form: 'https://forms.gle/WXe3ar5JX6CgqDy18',
+                poster: 'assets/posters/px4.jpg'
             },
             'funfinity': {
                 title: 'FUNFINITY',
@@ -776,7 +787,8 @@
                 fee: '₹50',
                 stud: 'Deepika (99623 10547)',
                 fac: 'Mrs. S. Priyadharshini',
-                form: 'https://forms.gle/L1q49QGz1qu5B1Uk8 '
+                form: 'https://forms.gle/L1q49QGz1qu5B1Uk8',
+                poster: 'assets/posters/404.jpg'
             }
         };
 
@@ -784,6 +796,7 @@
         const eventId = urlParams.get('id');
         const data = eventData[eventId];
         const registerBtn = document.getElementById("sub-btn");
+        const posterContainer = document.getElementById("event-poster");
 
         if (data) {
             document.title = `${data.title} - DECTRON 2K26`;
@@ -802,6 +815,11 @@
             document.getElementById('ev-title').textContent = 'EVENT NOT FOUND';
         }
 
+        if (data.poster) {
+            posterContainer.innerHTML = `
+                <img src="${data.poster}" alt="${data.title} Poster" class="event-poster-img">
+            `;
+        }
 
         function toggleMenu() {
             const nav = document.getElementById('nav-items-container');
