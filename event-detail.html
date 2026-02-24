@@ -80,7 +80,6 @@
             text-decoration: none;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif !important;
             font-weight: 500;
             letter-spacing: 1px;
         }
@@ -562,6 +561,12 @@
         .mobile-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
+
+        .coord-names a {
+            color: #ff7777;
+            font-family: 'Inter', sans-serif !important;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -697,7 +702,7 @@
                 venue: 'ECE Seminar Hall',
                 team: '2 - 4 Members',
                 fee: '₹100',
-                stud: 'Niranjan D (8778428579), Pavithra D (9865108301), Patrick Rohan V (7540011423)',
+                stud: 'Niranjan D <a href="tel:8778428579">(8778428579)</a>, Pavithra D <a href="tel:9865108301">(9865108301)</a>, Patrick Rohan V <a href="tel:7540011423">(7540011423)</a>',
                 fac: 'Dr. V. Nanammal',
                 form: 'https://forms.gle/hYxSMTrsCsHGjpG7A',
                 poster: 'assets/posters/visionx.jpg'
@@ -708,12 +713,12 @@
                 desc: 'Unleash your creativity and design skills! Create visually stunning technical posters that communicate complex engineering concepts in an engaging way.',
                 time: '1:00 PM - 4:00 PM',
                 venue: 'DSP Lab',
-                team: 'Max 2 Members',
+                team: 'Max 2 - 3 Members',
                 fee: '₹50',
-                stud: 'Lokpriyan M (9962040336), Janavi (6384074914)',
+                stud: 'Lokpriyan M <a href="tel:9962040336">(9962040336)</a>, Janavi <a href="tel:6384074914">(6384074914)</a>',
                 fac: 'Mr. B. Appoon',
                 form: 'https://forms.gle/huAchXSvhLWmwN2N8',
-                poster: 'assets/posters/creotix.jpg'
+                poster: 'assets/posters/creotix.png'
             },
             'synoptix': {
                 title: 'SYNOPTIX',
@@ -723,7 +728,7 @@
                 venue: 'EDC Lab',
                 team: '2 Members',
                 fee: '₹50',
-                stud: 'Deepika (8668014960), Krithika S (9952017659)',
+                stud: ' Deepika <a href="tel:86680149602">(86680149602)</a>, Krithika S <a href="tel:9952017659">(9952017659)</a>',
                 fac: 'Mrs. R. Gracelin Sheeba',
                 form: 'https://forms.gle/cQKYhPFiu4RG9mKp6',
                 poster: 'assets/posters/synoptix.jpg'
@@ -736,7 +741,7 @@
                 venue: 'Communication Lab',
                 team: '2 Members',
                 fee: '₹50',
-                stud: 'Vishali.L (7540036119)',
+                stud: 'Vishali.L <a href="tel:7540036119">(7540036119)</a>',
                 fac: 'Mr. E. Sakthivel',
                 form: 'https://forms.gle/kpRuesdBRq3Fi7bWA'
             },
@@ -748,7 +753,7 @@
                 venue: 'DSP lab',
                 team: 'Individual',
                 fee: '₹50',
-                stud: 'Rohit (8248518988), Sheikha Aslin A (9789540204)',
+                stud: 'Rohit <a href="tel:8248518988">(8248518988)</a>, Sheikha Aslin A <a href="tel:9789540204">(9789540204)</a>',
                 fac: 'Mr. C. Jerlin Ajith Davidson',
                 form: 'https://forms.gle/HVDT5JUScuZLNmL26'
             },
@@ -760,7 +765,7 @@
                 venue: 'Low power IC circuit Lab',
                 team: 'Individual / Team',
                 fee: '₹100',
-                stud: 'Anbu susee (8300963002)',
+                stud: 'Anbu Susee <a href="tel:8300963002">(8300963002)</a>',
                 fac: 'Mr. J. Ranjith Kumar',
                 form: 'https://forms.gle/WXe3ar5JX6CgqDy18',
                 poster: 'assets/posters/px4.jpg'
@@ -773,7 +778,7 @@
                 venue: 'S2',
                 team: 'Individual',
                 fee: '₹30',
-                stud: 'Sheikha Aslin A (9789546204)',
+                stud: 'Sheikha Aslin A <a href="9789546204">(9789546204)</a>',
                 fac: 'Mrs.C.Sasirekha',
                 form: 'https://forms.gle/MmkSQnMQQt1EX38t5'
             },
@@ -785,7 +790,7 @@
                 venue: 'S1',
                 team: 'Team of 3',
                 fee: '₹50',
-                stud: 'Deepika (99623 10547)',
+                stud: 'Deepika <a href="tel:9962310547">(9962310547)</a>, Jerolin <a href="tel:7305936089">(7305936089)</a>',
                 fac: 'Mrs. S. Priyadharshini',
                 form: 'https://forms.gle/L1q49QGz1qu5B1Uk8',
                 poster: 'assets/posters/404.jpg'
@@ -806,7 +811,7 @@
             document.getElementById('ev-venue').textContent = data.venue;
             document.getElementById('ev-team').textContent = data.team;
             document.getElementById('ev-desc').textContent = data.desc;
-            document.getElementById('ev-stud-coord').textContent = data.stud;
+            document.getElementById('ev-stud-coord').innerHTML = data.stud;
             document.getElementById('ev-fac-coord').textContent = data.fac;
             registerBtn.addEventListener("click", () => {
                 window.open(data.form, "_blank");
